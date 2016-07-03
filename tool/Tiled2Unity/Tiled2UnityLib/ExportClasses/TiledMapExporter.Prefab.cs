@@ -126,6 +126,17 @@ namespace Tiled2Unity
                         }
                     }
 
+                    // Collision2D data for the layer
+                    if (layer.Ignore != TmxLayer.IgnoreSettings.Collision) {
+                        foreach (var collisionLayer in layer.CollisionLayers) {
+                            var collisionElements = Create2DCollisionElementForLayer(collisionLayer);
+                            //layerElement.Add(collisionElements);
+                            //prefab.Add(collisionElements);
+                            Grid2D grid = Layer2DCollision.Get2DCollisionGrid(this.tmxMap, layer);
+                            prefab.SetAttributeValue("collision2d",grid.printArray());
+                        }
+                    }
+
                     AssignUnityProperties(layer, layerElement, PrefabContext.TiledLayer);
                     AssignTiledProperties(layer, layerElement);
 

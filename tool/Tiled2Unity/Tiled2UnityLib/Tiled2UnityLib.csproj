@@ -138,6 +138,7 @@
     <Compile Include="ChDir.cs" />
     <Compile Include="ConvexPolygonSet.cs" />
     <Compile Include="ExportClasses\TiledMapExporter.AssignMaterials.cs" />
+    <Compile Include="ExportClasses\TiledMapExporter.2DCollision.cs" />
     <Compile Include="ExportClasses\TiledMapExporter.Clipper.cs" />
     <Compile Include="ExportClasses\TiledMapExporter.cs" />
     <Compile Include="ExportClasses\TiledMapExporter.ImportFiles.cs" />
@@ -145,6 +146,8 @@
     <Compile Include="ExportClasses\TiledMapExporter.Prefab.cs" />
     <Compile Include="HashIndexOf.cs" />
     <Compile Include="Info.cs" />
+    <Compile Include="Grid2D.cs" />
+    <Compile Include="Layer2DCollision.cs" />
     <Compile Include="LayerClipper.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="PolylineReduction.cs" />

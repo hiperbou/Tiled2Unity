@@ -36,6 +36,7 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openTiledFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.batchProcessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearOutputWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,7 +88,7 @@
             this.richTextBoxOutput.Location = new System.Drawing.Point(3, 16);
             this.richTextBoxOutput.Name = "richTextBoxOutput";
             this.richTextBoxOutput.ReadOnly = true;
-            this.richTextBoxOutput.Size = new System.Drawing.Size(649, 119);
+            this.richTextBoxOutput.Size = new System.Drawing.Size(649, 134);
             this.richTextBoxOutput.TabIndex = 9;
             this.richTextBoxOutput.Text = "";
             this.richTextBoxOutput.WordWrap = false;
@@ -111,7 +112,7 @@
             this.buttonExport.ForeColor = System.Drawing.Color.MidnightBlue;
             this.buttonExport.Location = new System.Drawing.Point(3, 43);
             this.buttonExport.Name = "buttonExport";
-            this.buttonExport.Size = new System.Drawing.Size(126, 70);
+            this.buttonExport.Size = new System.Drawing.Size(126, 85);
             this.buttonExport.TabIndex = 11;
             this.buttonExport.Text = "Big Ass Export Button";
             this.buttonExport.UseVisualStyleBackColor = false;
@@ -147,22 +148,30 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openTiledFileToolStripMenuItem,
+            this.batchProcessToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(36, 20);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // openTiledFileToolStripMenuItem
             // 
             this.openTiledFileToolStripMenuItem.Name = "openTiledFileToolStripMenuItem";
-            this.openTiledFileToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.openTiledFileToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.openTiledFileToolStripMenuItem.Text = "&Open Tiled File ...";
             this.openTiledFileToolStripMenuItem.Click += new System.EventHandler(this.openTiledFileToolStripMenuItem_Click);
+            // 
+            // batchProcessToolStripMenuItem
+            // 
+            this.batchProcessToolStripMenuItem.Name = "batchProcessToolStripMenuItem";
+            this.batchProcessToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.batchProcessToolStripMenuItem.Text = "Process Multiple Files ...";
+            this.batchProcessToolStripMenuItem.Click += new System.EventHandler(this.batchProcessToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -171,13 +180,13 @@
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clearOutputWindowToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.editToolStripMenuItem.Text = "&Edit";
             // 
             // clearOutputWindowToolStripMenuItem
             // 
             this.clearOutputWindowToolStripMenuItem.Name = "clearOutputWindowToolStripMenuItem";
-            this.clearOutputWindowToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.clearOutputWindowToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.clearOutputWindowToolStripMenuItem.Text = "&Clear Output Window";
             this.clearOutputWindowToolStripMenuItem.Click += new System.EventHandler(this.clearOutputWindowToolStripMenuItem_Click);
             // 
@@ -192,51 +201,51 @@
             this.toolStripSeparator2,
             this.aboutTiled2UnityToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
             // addUnityPackageToProjectToolStripMenuItem
             // 
             this.addUnityPackageToProjectToolStripMenuItem.Name = "addUnityPackageToProjectToolStripMenuItem";
-            this.addUnityPackageToProjectToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.addUnityPackageToProjectToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
             this.addUnityPackageToProjectToolStripMenuItem.Text = "Import &Unity Package to Project";
             this.addUnityPackageToProjectToolStripMenuItem.Click += new System.EventHandler(this.addUnityPackageToProjectToolStripMenuItem_Click);
             // 
             // showHelpToolStripMenuItem
             // 
             this.showHelpToolStripMenuItem.Name = "showHelpToolStripMenuItem";
-            this.showHelpToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.showHelpToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
             this.showHelpToolStripMenuItem.Text = "Show Command &Help";
             this.showHelpToolStripMenuItem.Click += new System.EventHandler(this.showHelpToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(239, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(248, 6);
             // 
             // supportTiledMapEditorToolStripMenuItem
             // 
             this.supportTiledMapEditorToolStripMenuItem.Name = "supportTiledMapEditorToolStripMenuItem";
-            this.supportTiledMapEditorToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.supportTiledMapEditorToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
             this.supportTiledMapEditorToolStripMenuItem.Text = "&Support Tiled On Patreon ...";
             this.supportTiledMapEditorToolStripMenuItem.Click += new System.EventHandler(this.supportTiledMapEditorToolStripMenuItem_Click);
             // 
             // donateToTiled2UnityToolStripMenuItem
             // 
             this.donateToTiled2UnityToolStripMenuItem.Name = "donateToTiled2UnityToolStripMenuItem";
-            this.donateToTiled2UnityToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.donateToTiled2UnityToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
             this.donateToTiled2UnityToolStripMenuItem.Text = "&Donate to Tiled2Unity";
             this.donateToTiled2UnityToolStripMenuItem.Click += new System.EventHandler(this.donateToTiled2UnityToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(239, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(248, 6);
             // 
             // aboutTiled2UnityToolStripMenuItem
             // 
             this.aboutTiled2UnityToolStripMenuItem.Name = "aboutTiled2UnityToolStripMenuItem";
-            this.aboutTiled2UnityToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.aboutTiled2UnityToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
             this.aboutTiled2UnityToolStripMenuItem.Text = "&About Tiled2Unity";
             this.aboutTiled2UnityToolStripMenuItem.Click += new System.EventHandler(this.aboutTiled2UnityToolStripMenuItem_Click);
             // 
@@ -461,7 +470,7 @@
             this.groupBoxOutput.Controls.Add(this.richTextBoxOutput);
             this.groupBoxOutput.Location = new System.Drawing.Point(12, 331);
             this.groupBoxOutput.Name = "groupBoxOutput";
-            this.groupBoxOutput.Size = new System.Drawing.Size(655, 138);
+            this.groupBoxOutput.Size = new System.Drawing.Size(655, 153);
             this.groupBoxOutput.TabIndex = 15;
             this.groupBoxOutput.TabStop = false;
             this.groupBoxOutput.Text = "Output";
@@ -473,7 +482,7 @@
             this.groupBoxReviewExport.Controls.Add(this.tableLayoutPanelReviewExport);
             this.groupBoxReviewExport.Location = new System.Drawing.Point(674, 331);
             this.groupBoxReviewExport.Name = "groupBoxReviewExport";
-            this.groupBoxReviewExport.Size = new System.Drawing.Size(138, 135);
+            this.groupBoxReviewExport.Size = new System.Drawing.Size(138, 150);
             this.groupBoxReviewExport.TabIndex = 16;
             this.groupBoxReviewExport.TabStop = false;
             this.groupBoxReviewExport.Text = "Review and Export";
@@ -490,7 +499,7 @@
             this.tableLayoutPanelReviewExport.RowCount = 2;
             this.tableLayoutPanelReviewExport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanelReviewExport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelReviewExport.Size = new System.Drawing.Size(132, 116);
+            this.tableLayoutPanelReviewExport.Size = new System.Drawing.Size(132, 131);
             this.tableLayoutPanelReviewExport.TabIndex = 0;
             // 
             // richTextBoxLaunchTip
@@ -512,7 +521,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(824, 481);
+            this.ClientSize = new System.Drawing.Size(824, 500);
             this.Controls.Add(this.richTextBoxLaunchTip);
             this.Controls.Add(this.groupBoxReviewExport);
             this.Controls.Add(this.groupBoxOutput);
@@ -565,6 +574,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem supportTiledMapEditorToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+		private System.Windows.Forms.ToolStripMenuItem batchProcessToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem donateToTiled2UnityToolStripMenuItem;
         private System.Windows.Forms.CheckBox checkBoxPreferConvexPolygons;
         private System.Windows.Forms.Button buttonObjectTypesXml;

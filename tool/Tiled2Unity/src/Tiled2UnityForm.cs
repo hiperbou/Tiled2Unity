@@ -332,6 +332,25 @@ namespace Tiled2Unity
             this.textBoxObjectTypesXml.Text = "";
             this.tmxSession.TmxMap.ClearObjectTypeXml();
         }
+		
+		private void batchProcessToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			OpenFileDialog dialog = new OpenFileDialog();
+			dialog.InitialDirectory = Properties.Settings.Default.LastOpenDirectory;
+			dialog.Title = "Open Tiled (*.tmx) File";
+			dialog.Filter = "TMX files (*.tmx)|*.tmx";
+			dialog.RestoreDirectory = true;
+			dialog.Multiselect = true;
+
+			if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
+				string path = this.textBoxExportFolder.Text;
+
+				foreach (var fileName in dialog.FileNames) {
+					this.tmxSession.LoadTmxFile(fileName);
+					this.tmxSession.ExportTmxMap();
+				}
+			}
+		}
 
     }
 }

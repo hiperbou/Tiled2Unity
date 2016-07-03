@@ -41,6 +41,9 @@ namespace Tiled2Unity
                     Logger.WriteLine(prog);
                 };
 
+            Grid2D grid = Layer2DCollision.Get2DCollisionGrid(this.tmxMap, layer);
+            Logger.WriteLine(grid.print());
+
             ClipperLib.PolyTree solution = LayerClipper.ExecuteClipper(this.tmxMap, layer, xfFunc, progFunc);
 
             var paths = ClipperLib.Clipper.ClosedPathsFromPolyTree(solution);
