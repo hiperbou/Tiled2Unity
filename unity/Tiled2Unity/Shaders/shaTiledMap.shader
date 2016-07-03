@@ -1,4 +1,5 @@
-﻿Shader "Tiled/TextureTintSnap"
+﻿// Legacy shader for older Tiled2Unity builds. Will eventually remove.
+Shader "Tiled2Unity/TextureTintSnap (Legacy)"
 {
     Properties
     {
@@ -59,17 +60,6 @@
                 #ifdef PIXELSNAP_ON
                 OUT.vertex = UnityPixelSnap (OUT.vertex);
                 #endif
-
-                // Supports animations through z-component of tile
-                if (IN.vertex.z < 0)
-                {
-                    // "Hide" frames of a tile animation that are not active
-                    OUT.vertex.w = 0;
-                }
-                else
-                {
-                    OUT.vertex.z = 0;
-                }
 
                 return OUT;
             }

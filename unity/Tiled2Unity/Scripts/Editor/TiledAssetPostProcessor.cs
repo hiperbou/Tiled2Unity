@@ -4,6 +4,12 @@
 #undef T2U_USE_LEGACY_IMPORTER
 #endif
 
+#if UNITY_4_0 || UNITY_4_0_1 || UNITY_4_2 || UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7 || UNITY_5_0 || UNITY_5_1 || UNITY_5_2 || UNITY_5_3
+#define T2U_USE_LIGHT_PROBES_API
+#else
+#undef T2U_USE_LIGHT_PROBES_API
+#endif
+
 using System.Collections;
 using System.IO;
 using System.Linq;
@@ -154,11 +160,17 @@ namespace Tiled2Unity
                 mr.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
 #endif
 
-                // No probes
-                mr.useLightProbes = false;
 #if !T2U_USE_LEGACY_IMPORTER
                 mr.reflectionProbeUsage = UnityEngine.Rendering.ReflectionProbeUsage.Off;
 #endif
+
+#if T2U_USE_LIGHT_PROBES_API
+                // No probes
+                mr.useLightProbes = false;
+#else
+                //mr.lightProbeUsage = UnityEngine.Rendering.LightProbeUsage.Off;
+#endif
+
             }
         }
 
