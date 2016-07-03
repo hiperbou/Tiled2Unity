@@ -46,6 +46,27 @@ namespace Tiled2Unity
         public int MapWidthInPixels = 0;
         public int MapHeightInPixels = 0;
 
+        public int[] collision2d;
+
+        public void Start() {
+            Game.Instance.level.collisionGrid = getCollisionGrid();
+        }
+
+        public CollisionGrid getCollisionGrid() {
+            int dataIndex = 0;
+            int _width = NumTilesWide;
+            int _height = NumTilesHigh;
+            CollisionGrid grid = new CollisionGrid(_width, _height);
+
+            for (int i = 0; i < _height; i++) {
+                for (int j = 0; j < _width; j++) {
+                    grid.setValue(j, i, collision2d[dataIndex]);
+                    dataIndex++;
+                }
+            }
+            return grid;
+        }
+
         public float GetMapWidthInPixelsScaled()
         {
             return this.MapWidthInPixels * this.transform.lossyScale.x * this.ExportScale;

@@ -424,6 +424,8 @@ namespace Tiled2Unity
                 map.ExportScale = ImportUtils.GetAttributeAsFloat(goXml, "exportScale");
                 map.MapWidthInPixels = ImportUtils.GetAttributeAsInt(goXml, "mapWidthInPixels");
                 map.MapHeightInPixels = ImportUtils.GetAttributeAsInt(goXml, "mapHeightInPixels");
+                string str = ImportUtils.GetAttributeAsString(goXml, "collision2d");
+                map.collision2d = (str ?? "").Split(',').Select<string, int>(int.Parse).ToArray<int>();
             }
             catch
             {
